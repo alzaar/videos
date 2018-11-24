@@ -22,7 +22,13 @@ export default class Main extends React.Component {
         key: KEY
       }
     });
-    this.setState({ videos: response.data.items })
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0]
+     })
+  }
+  componentDidMount() {
+    this.handleOnFormSubmit('Bievenue')
   }
   onVideoSelect = (video) => {
     this.setState({selectedVideo: video})

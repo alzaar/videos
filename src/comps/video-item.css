@@ -7,3 +7,11 @@
   text-overflow: ellipsis !important;
   width: 275px !important;
 }
+
+.custom-margin {
+  margin-bottom: 20px;
+}
+
+img, h4{
+  cursor: pointer;
+}

@@ -8,14 +8,14 @@ export default class VideoItem extends React.Component {
   render() {
     const video = this.props.video
     return (
-      <div className="col-md-4">
+      <div key={video.id.videoId} className="col-md-4">
         <div className="ui card custom">
           <div className="image">
-            <img src={video.snippet.thumbnails.medium.url}
+            <img onClick={this.onClick} src={video.snippet.thumbnails.medium.url}
               alt={video.snippet.description}/>
           </div>
           <div className="content">
-            <a onClick={this.onClick} href="#" className="header">{video.snippet.title}</a>
+            <h4 onClick={this.onClick} className="header">{video.snippet.title}</h4>
             <div className="description">
               {video.snippet.description}
             </div>
