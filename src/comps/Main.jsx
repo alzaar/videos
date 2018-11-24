@@ -3,11 +3,14 @@ import SearchBar from './SearchBar'
 import KEY from '../apis/youtube'
 import axios from 'axios';
 import VideoList from './VideoList';
+import VideoDetails from './VideoDetails';
+
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      videos: []
+      videos: [],
+      selectedVideo: null
     }
   }
   handleOnFormSubmit = async (term) => {
@@ -21,11 +24,15 @@ export default class Main extends React.Component {
     });
     this.setState({ videos: response.data.items })
   }
+  onVideoSelect = (video) => {
+    this.setState({selectedVideo: video})
+  }
   render() {
     return (
       <div>
         <SearchBar onFormSubmit={this.handleOnFormSubmit}/>
-        <VideoList videos={this.state.videos}/>
+        <VideoDetails selectedVideo={this.state.selectedVideo}/>
+        <VideoList videos={this.state.videos} videoSelect={this.onVideoSelect}/>
       </div>
     );
   }

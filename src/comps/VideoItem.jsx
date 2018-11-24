@@ -2,23 +2,26 @@ import React from 'react';
 import './video-item.css'
 export default class VideoItem extends React.Component {
   onClick = () => {
-    
+    let v1 = this.props.video;
+    this.props.videoSelect(v1);
   }
   render() {
     const video = this.props.video
     return (
-
-	        <div className="col-md-4">
-    		    <div className="card mb">
-              <img className="card-img-top" src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
-                <div className="card-body mb">
-                  <h5 className="card-title">{video.snippet.title}</h5>
-                  <p className="card-text">{video.snippet.description}</p>
-                  <button onClick={this.onClick} type="button" className="btn btn-primary mb">Play</button>
-                </div>
-              </div>
+      <div className="col-md-4">
+        <div className="ui card custom">
+          <div className="image">
+            <img src={video.snippet.thumbnails.medium.url}
+              alt={video.snippet.description}/>
+          </div>
+          <div className="content">
+            <a onClick={this.onClick} href="https://google.ca" className="header">{video.snippet.title}</a>
+            <div className="description">
+              {video.snippet.description}
             </div>
-
+          </div>
+        </div>
+      </div>
     );
   }
 }

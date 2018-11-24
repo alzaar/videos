@@ -1,19 +1,9 @@
-.mb.card-body{
-    text-align: center;
+.custom{
+  margin-bottom: 20px !important;
+  height: 350px !important;
 }
-.mb.btn{
-    border-radius: 0;
-    box-shadow: 0.5px 1px 2px hsla(0, 0%, 20%, 1);
-}
-.mb.btn:hover{
-    transform: translateY(-2px);
-    box-shadow: 2px 2px 5px hsla(0, 0%, 20%, 1);
-}
-.mb.card{
-    border-radius: 0px / 0px;
-    width: 320px;
-    height: 400px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    box-shadow: 0.5px 1px 2px hsla(0, 0%, 20%, 1);
+.description {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: 275px !important;
 }

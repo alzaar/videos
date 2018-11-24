@@ -7,18 +7,16 @@ export default class VideoList extends React.Component {
     const videos = this.props.videos.map((video) => {
       return (
 
-            <Video key={video.id.videoId} video={video} />
+            <Video videoSelect={this.props.videoSelect} key={video.id.videoId} video={video} />
 
       );
     });
     return (
-
-        <div className="container">
-          <div className="row">
-            {videos}
-          </div>
+      <div className="container">
+        <div className="row">
+          {videos}
         </div>
-
+      </div>
     );
   }
 }
