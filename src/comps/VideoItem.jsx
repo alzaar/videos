@@ -15,7 +15,7 @@ export default class VideoItem extends React.Component {
               alt={video.snippet.description}/>
           </div>
           <div className="content">
-            <a onClick={this.onClick} href="https://google.ca" className="header">{video.snippet.title}</a>
+            <a onClick={this.onClick} href="#" className="header">{video.snippet.title}</a>
             <div className="description">
               {video.snippet.description}
             </div>
